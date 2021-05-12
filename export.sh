@@ -31,7 +31,7 @@ fi
 # List all folders from the source controller
 FOLDERS=$(curl -Ss \
     -u "${JENKINS_USER_ID}:${JENKINS_API_TOKEN}" \
-    --data-urlencode "script=Jenkins.instanceOrNull.getAllItems(com.cloudbees.hudson.plugins.folder.Folder.class).each {println it.fullName }; return null" \
+    --data-urlencode "script=Jenkins.instanceOrNull.getAllItems(com.cloudbees.hudson.plugins.folder.Folder.class).each { println it.fullName }; return null" \
     -X POST \
     "${BASE_URL}/${SOURCE_CONTROLLER}/scriptText")
 
